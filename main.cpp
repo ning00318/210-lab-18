@@ -7,14 +7,15 @@ struct Node {
     Node *next;
 };
 
-void addNodesToHead(Node *);
-void addNodesToTail(Node *);
+void addNodesToHead(Node*, float, string);
+void addNodesToTail(Node*, float, string);
 
 int main() {
     Node *head = nullptr;
     int choice;
-    int rating;
+    float rating;
     string comments;
+    string yn;
 
     do {
         cout << "Which linked list method should we use?" << endl;
@@ -25,6 +26,7 @@ int main() {
         cin.ignore();
 
         if (choice == 1 || choice == 2) {
+            do {
             cout << "Enter review rating 0-5: ";
             cin >> rating;
             cin.ignore();
@@ -33,9 +35,14 @@ int main() {
             getline(cin, comments);
 
             if (choice == 1)
-                addNodesToHead(head);
+                addNodesToHead(head, rating, comments);
             else
-                addNodesToTail(head);            
+                addNodesToTail(head, rating, comments);
+            
+            cout << "Enter another review? Y/N: ";
+            getline(cin, yn);
+
+            } while (yn == "n" || yn == "N");
         }
         else
             cout << "Please enter choices correctly (option 1 or 2) and try again" << endl;
