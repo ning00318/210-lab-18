@@ -61,19 +61,24 @@ int main() {
 }
 
 Node *addNodesToHead(Node *head, float rating, string comments) {
-    Node *newNode = new Node;
-    newNode->rating = rating;
-    newNode->comments = comments;
-    newNode->next = head;
+    Node *newNode = new Node;       // add new node
+    newNode->rating = rating;       // add rating in new node
+    newNode->comments = comments;   // add comments in new node
+    newNode->next = head;           // 
 
     return newNode;
 }
 
 Node *addNodesToTail(Node *head, float rating, string comments) {
-    Node *newNode = new Node;
-    newNode->rating = rating;
-    newNode->comments = comments;
+    Node *newNode = new Node;       // add new node
+    newNode->rating = rating;       // add rating in new node
+    newNode->comments = comments;   // add comments in new node
     newNode->next = nullptr;
+
+    if (head == nullptr) {
+        head = newNode;
+        return head;
+    }
     
     return newNode;
 }
