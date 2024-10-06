@@ -7,10 +7,12 @@ struct Node {
     Node *next;
 };
 
-
+void addNodesToHead(Node *);
+void addNodesToTail(Node *);
 
 int main() {
     int choice;
+    Node *head = nullptr;
 
     do {
         cout << "Which linked list method should we use?" << endl;
@@ -20,10 +22,10 @@ int main() {
         cin >> choice;
 
         if (choice == 1) {
-
+            addNodesToHead(head);
         }
         else if (choice == 2) {
-
+            addNodesToTail(head);
         }
         else
             cout << "Please enter choices correctly (option 1 or 2) and try again" << endl;
