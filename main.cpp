@@ -17,6 +17,7 @@ int main() {
     float rating;
     string comments;
     string yn;
+    int count = 0;
 
     do {
         cout << "Which linked list method should we use?" << endl;
@@ -28,6 +29,7 @@ int main() {
 
         if (choice == 1 || choice == 2) {
             do {
+                count++;
                 cout << "Enter review rating 0-5: ";
                 cin >> rating;
                 cin.ignore();
@@ -65,5 +67,5 @@ void addNodesToTail(Node *head, float rating, string comments) {
 
 void outputReviews(Node *head) {
     cout << "Outputting all reviews:" << endl;
-    cout << "\t> Review #";
+    cout << "\t> Review #" << count;
 }
