@@ -58,11 +58,15 @@ int main() {
 }
 
 Node *addNodesToHead(Node *head, float rating, string comments) {
-    return;
+    Node *newNode = new Node;
+    newNode->rating = rating;
+    
+    return newNode;
 }
 
 Node *addNodesToTail(Node *head, float rating, string comments) {
-    return;
+    Node *newNode = new Node;
+    return newNode;
 }
 
 void outputReviews(Node *head, int count) {
