@@ -27,35 +27,35 @@ int main() {
 
         if (choice == 1 || choice == 2) {
             do {
-            cout << "Enter review rating 0-5: ";
-            cin >> rating;
-            cin.ignore();
+                cout << "Enter review rating 0-5: ";
+                cin >> rating;
+                cin.ignore();
 
-            cout << "\nEnter review comments: ";
-            getline(cin, comments);
+                cout << "Enter review comments: ";
+                getline(cin, comments);
 
-            if (choice == 1)
-                addNodesToHead(head, rating, comments);
-            else
-                addNodesToTail(head, rating, comments);
-            
-            cout << "Enter another review? Y/N: ";
-            getline(cin, yn);
+                if (choice == 1)
+                    addNodesToHead(head, rating, comments);
+                else
+                    addNodesToTail(head, rating, comments);
+                
+                cout << "Enter another review? Y/N: ";
+                getline(cin, yn);
 
-            } while (yn == "n" || yn == "N");
+            } while (yn == "y" || yn == "Y");
         }
         else
-            cout << "Please enter choices correctly (option 1 or 2) and try again" << endl;
+            cout << "Please enter choices correctly (option 1 or 2) and try again" << endl << endl;
     
-    } while (choice != 1 || choice != 2);
+    } while (choice == 1 || choice == 2);
 
     return 0;
 }
 
-void addNodesToHead(Node *head) {
+void addNodesToHead(Node *head, float rating, string comments) {
     
 }
 
-void addNodesToTail(Node *head) {
+void addNodesToTail(Node *head, float rating, string comments) {
     
 }
