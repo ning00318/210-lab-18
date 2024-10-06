@@ -12,15 +12,14 @@ struct Node {
 // prototypes
 Node *addNodesToHead(Node*, float, string);
 Node *addNodesToTail(Node*, float, string);
-void outputReviews(Node*, int);
+void outputReviews(Node*);
 
 int main() {
-    Node *head = nullptr;
+    Node *head = nullptr;   // initialize
     int choice;
     float rating;
     string comments;
     string yn;
-    int count = 0;
 
     do {
         cout << "Which linked list method should we use?" << endl;
@@ -32,7 +31,6 @@ int main() {
 
         if (choice == 1 || choice == 2) {
             do {
-                count++;
                 cout << "Enter review rating 0-5: ";
                 cin >> rating;
                 cin.ignore();
@@ -55,7 +53,7 @@ int main() {
     
     } while (choice != 1 && choice != 2);   // repeat while the choice is not equal to 1 and 2
 
-    outputReviews(head, count);     // output the data after entered all the informations
+    outputReviews(head);     // output the data after entered all the informations
 
     return 0;
 }
@@ -66,7 +64,7 @@ Node *addNodesToHead(Node *head, float rating, string comments) {
     newNode->comments = comments;   // add comments in new node
     newNode->next = head;           // 
 
-    return newNode;
+    return newNode;     // return new head to the new node
 }
 
 Node *addNodesToTail(Node *head, float rating, string comments) {
@@ -75,7 +73,7 @@ Node *addNodesToTail(Node *head, float rating, string comments) {
     newNode->comments = comments;   // add comments in new node
     newNode->next = nullptr;
 
-    if (head == nullptr) {
+    if (head == nullptr) {      // 
         head = newNode;
         return head;
     }
@@ -83,7 +81,7 @@ Node *addNodesToTail(Node *head, float rating, string comments) {
     return newNode;
 }
 
-void outputReviews(Node *head, int count) {
+void outputReviews(Node *head) {
     cout << "Outputting all reviews:" << endl;
     Node *current = head;
     int i = 1;
