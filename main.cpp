@@ -62,7 +62,7 @@ Node *addNodesToHead(Node *head, float rating, string comments) {
     Node *newNode = new Node;       // add new node
     newNode->rating = rating;       // add rating in new node
     newNode->comments = comments;   // add comments in new node
-    newNode->next = head;           // 
+    newNode->next = head;           // add new node in head
 
     return newNode;     // return new head to the new node
 }
@@ -71,34 +71,33 @@ Node *addNodesToTail(Node *head, float rating, string comments) {
     Node *newNode = new Node;       // add new node
     newNode->rating = rating;       // add rating in new node
     newNode->comments = comments;   // add comments in new node
-    newNode->next = nullptr;
+    newNode->next = nullptr;        // means it's the last node
 
     if (head == nullptr) {      // if head is null
-        head = newNode;
+        head = newNode;         // make new node be the head
         return head;
     }
 
-    Node *current = head;
+    Node *current = head;               // make head be the current 
     while (current->next != nullptr) {  // while current-> is not null,
-        current = current->next;        // move to the next until reach the last one
+        current = current->next;        // move to the next node until reach the last one
     }
-    current->next = newNode;  // add new node to the last
-
+    current->next = newNode;            // make new node to the last
     return head;
 }
 
 void outputReviews(Node *head) {
     cout << "Outputting all reviews:" << endl;
     Node *current = head;
-    int i = 1;
+    int i = 0;
     float total = 0.0;
 
     while (current != nullptr) {    // while current is not empty, same as while(!current)
-        cout << "\t> Review #" << i++ << ": ";
+        cout << "\t> Review #" << ++i << ": ";
         cout << current->rating << ": " << current->comments << endl;
 
-        total += current->rating;
-        current = current->next;
+        total += current->rating;   // calculate the total rating
+        current = current->next;    // set the next node to current and review the data
     }
     
     float average = total / i;
