@@ -9,6 +9,7 @@ struct Node {
 
 void addNodesToHead(Node*, float, string);
 void addNodesToTail(Node*, float, string);
+void outputReviews(Node*);
 
 int main() {
     Node *head = nullptr;
@@ -47,7 +48,9 @@ int main() {
         else
             cout << "Please enter choices correctly (option 1 or 2) and try again" << endl << endl;
     
-    } while (choice == 1 || choice == 2);
+    } while (choice != 1 && choice != 2);
+
+    outputReviews(head);
 
     return 0;
 }
@@ -58,4 +61,9 @@ void addNodesToHead(Node *head, float rating, string comments) {
 
 void addNodesToTail(Node *head, float rating, string comments) {
     
+}
+
+void outputReviews(Node *head) {
+    cout << "Outputting all reviews:" << endl;
+    cout << "\t> Review #";
 }
