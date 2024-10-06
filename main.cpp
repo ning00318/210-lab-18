@@ -84,8 +84,16 @@ Node *addNodesToTail(Node *head, float rating, string comments) {
 }
 
 void outputReviews(Node *head, int count) {
-
     cout << "Outputting all reviews:" << endl;
-    cout << "\t> Review #" << count << ": " << endl;
+    Node *current = head;
+    int i = 1;
+
+    while (current != nullptr) {    // while current is not empty, same as while(!current)
+        cout << "\t> Review #" << i++ << ": ";
+        cout << current->rating << ": " << current->comments << endl;
+        current = current->next;
+    }
+
+    
     cout << "\t> Average: " << endl;
 }
