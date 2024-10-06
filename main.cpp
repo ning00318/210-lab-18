@@ -60,12 +60,18 @@ int main() {
 Node *addNodesToHead(Node *head, float rating, string comments) {
     Node *newNode = new Node;
     newNode->rating = rating;
-    
+    newNode->comments = comments;
+    newNode->next = head;
+
     return newNode;
 }
 
 Node *addNodesToTail(Node *head, float rating, string comments) {
     Node *newNode = new Node;
+    newNode->rating = rating;
+    newNode->comments = comments;
+    newNode->next = nullptr;
+    
     return newNode;
 }
 
