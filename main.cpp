@@ -7,9 +7,9 @@ struct Node {
     Node *next;
 };
 
-void addNodesToHead(Node*, float, string);
-void addNodesToTail(Node*, float, string);
-void outputReviews(Node*);
+Node *addNodesToHead(Node*, float, string);
+Node *addNodesToTail(Node*, float, string);
+void outputReviews(Node*, int);
 
 int main() {
     Node *head = nullptr;
@@ -38,9 +38,9 @@ int main() {
                 getline(cin, comments);
 
                 if (choice == 1)
-                    addNodesToHead(head, rating, comments);
+                    head = addNodesToHead(head, rating, comments);
                 else
-                    addNodesToTail(head, rating, comments);
+                    head = addNodesToTail(head, rating, comments);
                 
                 cout << "Enter another review? Y/N: ";
                 getline(cin, yn);
@@ -52,20 +52,22 @@ int main() {
     
     } while (choice != 1 && choice != 2);
 
-    outputReviews(head);
+    outputReviews(head, count);
 
     return 0;
 }
 
-void addNodesToHead(Node *head, float rating, string comments) {
-    
+Node *addNodesToHead(Node *head, float rating, string comments) {
+    return;
 }
 
-void addNodesToTail(Node *head, float rating, string comments) {
-    
+Node *addNodesToTail(Node *head, float rating, string comments) {
+    return;
 }
 
-void outputReviews(Node *head) {
+void outputReviews(Node *head, int count) {
+
     cout << "Outputting all reviews:" << endl;
-    cout << "\t> Review #" << count;
+    cout << "\t> Review #" << count << ": ";
+    cout << "\t> Average: ";
 }
