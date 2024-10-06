@@ -73,12 +73,18 @@ Node *addNodesToTail(Node *head, float rating, string comments) {
     newNode->comments = comments;   // add comments in new node
     newNode->next = nullptr;
 
-    if (head == nullptr) {      // 
+    if (head == nullptr) {      // if head is null
         head = newNode;
         return head;
     }
-    
-    return newNode;
+
+    Node *current = head;
+    while (current->next != nullptr) {  // while current-> is not null,
+        current = current->next;        // move to the next until reach the last one
+    }
+    current->next = newNode;  // add new node to the last
+
+    return head;
 }
 
 void outputReviews(Node *head) {
