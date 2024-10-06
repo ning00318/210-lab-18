@@ -1,3 +1,5 @@
+// COMSC-210 | Lab 18: Movie Reviews
+
 #include <iostream>
 using namespace std;
 
@@ -46,14 +48,14 @@ int main() {
                 cout << "Enter another review? Y/N: ";
                 getline(cin, yn);
 
-            } while (yn == "y" || yn == "Y");
+            } while (yn == "y" || yn == "Y");   // repeat while the answer is y or Y
         }
         else
             cout << "Please enter choices correctly (option 1 or 2) and try again" << endl << endl;
     
-    } while (choice != 1 && choice != 2);   // repeat until choice is not both equal to 1 and 2
+    } while (choice != 1 && choice != 2);   // repeat while the choice is not equal to 1 and 2
 
-    outputReviews(head, count);
+    outputReviews(head, count);     // output the data after entered all the informations
 
     return 0;
 }
