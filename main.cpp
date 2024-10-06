@@ -87,13 +87,16 @@ void outputReviews(Node *head, int count) {
     cout << "Outputting all reviews:" << endl;
     Node *current = head;
     int i = 1;
+    float total = 0.0;
 
     while (current != nullptr) {    // while current is not empty, same as while(!current)
         cout << "\t> Review #" << i++ << ": ";
         cout << current->rating << ": " << current->comments << endl;
+
+        total += current->rating;
         current = current->next;
     }
-
     
-    cout << "\t> Average: " << endl;
+    float average = total / i;
+    cout << "\t> Average: " << average << endl;
 }
